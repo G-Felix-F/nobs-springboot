@@ -22,17 +22,17 @@ public class CreateProductServiceTest {
     @InjectMocks
     private CreateProductService createProductService;
 
-    @BeforeEach
-    public void setup() {
-        MockitoAnnotations.openMocks(this);
-    }
-
     private static Product instanciateProduct(String name, String description, Double price) {
         Product product = new Product();
         product.setName(name);
         product.setDescription(description);
         product.setPrice(price);
         return product;
+    }
+
+    @BeforeEach
+    public void setup() {
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test

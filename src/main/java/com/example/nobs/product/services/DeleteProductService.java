@@ -19,8 +19,7 @@ public class DeleteProductService implements Command<Integer, Void> {
 
     @Override
     public Void execute(Integer id) {
-        Optional<Product> product = productRepository.findById(id);
-        if (product.isEmpty()) {
+        if (!productRepository.existsById(id)) {
             throw new ProductNotFoundException();
         }
         productRepository.deleteById(id);
