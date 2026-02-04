@@ -1,9 +1,8 @@
 package com.example.nobs.product.services;
 
-import com.example.nobs.Query;
+import com.example.nobs.cqrs.Query;
 import com.example.nobs.product.ProductRepository;
 import com.example.nobs.product.model.ProductDTO;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

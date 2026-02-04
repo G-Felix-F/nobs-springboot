@@ -1,6 +1,6 @@
 package com.example.nobs.product.services;
 
-import com.example.nobs.Command;
+import com.example.nobs.cqrs.Command;
 import com.example.nobs.exceptions.ProductNotFoundException;
 import com.example.nobs.product.ProductRepository;
 import com.example.nobs.product.model.Product;

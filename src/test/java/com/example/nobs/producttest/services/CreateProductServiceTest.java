@@ -1,5 +1,6 @@
 package com.example.nobs.producttest.services;
 
+import com.example.nobs.exceptions.ProductNotValidException;
 import com.example.nobs.product.ProductRepository;
 import com.example.nobs.product.model.Product;
 import com.example.nobs.product.model.ProductDTO;
@@ -9,11 +10,9 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 public class CreateProductServiceTest {
 
@@ -43,8 +42,34 @@ public class CreateProductServiceTest {
                 "Product Description which is at least 20 chars",
                 9.99
         );
-//        when(createProductService.execute(product))
-//                .thenReturn(new ProductDTO(product), ResponseEntity.status(HttpStatus.CREATED));
-//        verify();
+        Product savedProduct = instanciateProduct(
+                product.getName(),
+                product.getDescription(),
+                product.getPrice()
+        );
+        savedProduct.setId(1);
+
+        when(productRepository.save(product)).thenReturn(savedProduct);
+
+        ProductDTO result = createProductService.execute(product);
+
+        assertNotNull(result);
+        assertEquals(savedProduct.getId(), result.getId());
+        assertEquals(savedProduct.getName(), result.getName());
+        verify(productRepository, times(1)).save(product);
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenProductIsInvalid() {
+        Product invalidProduct = instanciateProduct(
+                "",
+                "Product Description which is at least 20 chars",
+                9.99
+        );
+        assertThrows(
+                ProductNotValidException.class,
+                () -> createProductService.execute(invalidProduct)
+        );
+        verify(productRepository, never()).save(invalidProduct);
     }
 }

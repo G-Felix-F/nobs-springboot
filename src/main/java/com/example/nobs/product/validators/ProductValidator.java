@@ -7,7 +7,8 @@ import io.micrometer.common.util.StringUtils;
 
 public class ProductValidator {
 
-    private ProductValidator() {}
+    private ProductValidator() {
+    }
 
     public static void execute(Product product) {
         if (StringUtils.isBlank(product.getName())) {

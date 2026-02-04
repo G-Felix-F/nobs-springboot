@@ -7,7 +7,6 @@ import com.example.nobs.product.validators.ProductValidator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 public class ProductValidatorTest {
 
