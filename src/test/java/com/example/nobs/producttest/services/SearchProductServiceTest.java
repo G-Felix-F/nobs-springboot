@@ -36,7 +36,7 @@ public class SearchProductServiceTest {
     }
 
     @Test
-    public void shouldReturnIPhoneProductList() {
+    public void shouldReturnOneProduct() {
         String keyword = "iPhone";
 
         when(productRepository.findByNameOrDescriptionContaining(keyword))
@@ -51,7 +51,7 @@ public class SearchProductServiceTest {
     }
 
     @Test
-    public void shouldReturnAtLeastTwoProductList() {
+    public void shouldReturnTwoProduct() {
         String keyword = "Android";
 
         when(productRepository.findByNameOrDescriptionContaining(keyword))
