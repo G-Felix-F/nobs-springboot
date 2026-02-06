@@ -7,6 +7,7 @@ import com.example.nobs.product.model.Product;
 import com.example.nobs.product.model.ProductDTO;
 import com.example.nobs.product.model.UpdateProductCommand;
 import com.example.nobs.product.validators.ProductValidator;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -21,6 +22,9 @@ public class UpdateProductService implements Command<UpdateProductCommand, Produ
     }
 
     @Override
+    @CachePut(value = "productCache", key = "#command.getId()")
+    // Evict -> throws it away only
+    // Put -> throws it away then puts the return value of the method in the cache
     public ProductDTO execute(UpdateProductCommand command) {
         Optional<Product> productOptional = productRepository.findById(command.getId());
         if (productOptional.isEmpty()) {
