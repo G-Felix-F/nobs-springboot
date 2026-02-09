@@ -73,3 +73,50 @@
 2026-02-09T11:25:21.639-03:00  INFO 13320 --- [nobs] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-02-09T11:25:21.642-03:00  INFO 13320 --- [nobs] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-02-09T11:25:21.648-03:00  INFO 13320 --- [nobs] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-02-09T14:05:55.817-03:00  INFO 19344 --- [nobs] [main] com.example.nobs.NobsApplication         : Starting NobsApplication using Java 22.0.1 with PID 19344 (D:\Programação\Intellij\IdeaProjects\nobs\target\classes started by Gabriel in D:\Programação\Intellij\IdeaProjects\nobs)
+2026-02-09T14:05:55.833-03:00  INFO 19344 --- [nobs] [main] com.example.nobs.NobsApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-02-09T14:05:56.733-03:00  INFO 19344 --- [nobs] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-09T14:05:56.795-03:00  INFO 19344 --- [nobs] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
+2026-02-09T14:05:57.424-03:00  INFO 19344 --- [nobs] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-02-09T14:05:57.438-03:00  INFO 19344 --- [nobs] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-09T14:05:57.438-03:00  INFO 19344 --- [nobs] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-09T14:05:57.513-03:00  INFO 19344 --- [nobs] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1626 ms
+2026-02-09T14:05:57.688-03:00  INFO 19344 --- [nobs] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-09T14:05:58.136-03:00  INFO 19344 --- [nobs] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c62c3fd
+2026-02-09T14:05:58.137-03:00  INFO 19344 --- [nobs] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-09T14:05:58.171-03:00  INFO 19344 --- [nobs] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-09T14:05:58.256-03:00  INFO 19344 --- [nobs] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-09T14:05:58.818-03:00  INFO 19344 --- [nobs] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-09T14:05:58.946-03:00  INFO 19344 --- [nobs] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/nobs]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.45
+	Default catalog/schema: nobs/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-09T14:05:59.886-03:00  INFO 19344 --- [nobs] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-09T14:05:59.893-03:00  INFO 19344 --- [nobs] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-09T14:06:00.045-03:00  INFO 19344 --- [nobs] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-09T14:06:00.924-03:00  WARN 19344 --- [nobs] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-09T14:06:01.344-03:00  WARN 19344 --- [nobs] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 9922f6e1-482b-4492-9e67-cbe65ad3aadf
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-09T14:06:01.413-03:00  INFO 19344 --- [nobs] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-09T14:06:01.639-03:00  INFO 19344 --- [nobs] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-02-09T14:06:01.646-03:00  INFO 19344 --- [nobs] [main] com.example.nobs.NobsApplication         : Started NobsApplication in 6.55 seconds (process running for 7.211)
+2026-02-09T14:07:07.771-03:00  INFO 19344 --- [nobs] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-09T14:07:07.771-03:00  INFO 19344 --- [nobs] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-09T14:07:07.772-03:00  INFO 19344 --- [nobs] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-02-09T14:08:07.488-03:00  INFO 19344 --- [nobs] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-09T14:08:07.493-03:00  INFO 19344 --- [nobs] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-02-09T14:08:07.496-03:00  INFO 19344 --- [nobs] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-09T14:08:07.499-03:00  INFO 19344 --- [nobs] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-09T14:08:07.532-03:00  INFO 19344 --- [nobs] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
