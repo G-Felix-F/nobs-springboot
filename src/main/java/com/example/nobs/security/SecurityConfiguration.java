@@ -1,5 +1,6 @@
 package com.example.nobs.security;
 
+import com.example.nobs.security.jwt.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -34,13 +35,23 @@ public class SecurityConfiguration {
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable) // allows for POST, PUT, DELETE mappings with authentication
                 .authorizeHttpRequests(authorize -> {
+                    authorize.requestMatchers(HttpMethod.POST,"/login").permitAll();
                     authorize.requestMatchers(HttpMethod.POST, "/user").permitAll();
                     authorize.anyRequest().authenticated();
                 })
+//                .addFilterBefore(
+//                        new BasicAuthenticationFilter(authenticationManager(httpSecurity)),
+//                        UsernamePasswordAuthenticationFilter.class
+//                )
                 .addFilterBefore(
-                        new BasicAuthenticationFilter(authenticationManager(httpSecurity)),
+                        jwtAuthenticationFilter(),
                         UsernamePasswordAuthenticationFilter.class
                 )
                 .build();
+    }
+
+    @Bean
+    public JwtAuthenticationFilter jwtAuthenticationFilter() {
+        return new JwtAuthenticationFilter();
     }
 }
